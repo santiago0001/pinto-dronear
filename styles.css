@@ -1013,6 +1013,70 @@ h1 span {
   font-size: 12px;
 }
 
+.floating-whatsapp {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  font-size: 34px;
+  box-shadow:
+    0 18px 34px rgba(37, 211, 102, 0.28),
+    0 8px 18px rgba(31, 41, 51, 0.18);
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  animation:
+    whatsappFadeUp 0.65s ease 0.45s forwards,
+    whatsappPulse 3.6s ease-in-out 1.5s infinite;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.floating-whatsapp:hover {
+  background: #20c35c;
+  transform: translateY(-4px) scale(1.04);
+  box-shadow:
+    0 22px 42px rgba(37, 211, 102, 0.34),
+    0 12px 24px rgba(31, 41, 51, 0.2);
+}
+
+.floating-whatsapp i {
+  line-height: 1;
+}
+
+@keyframes whatsappFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes whatsappPulse {
+  0%,
+  64%,
+  100% {
+    box-shadow:
+      0 18px 34px rgba(37, 211, 102, 0.28),
+      0 8px 18px rgba(31, 41, 51, 0.18),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+
+  78% {
+    box-shadow:
+      0 18px 34px rgba(37, 211, 102, 0.28),
+      0 8px 18px rgba(31, 41, 51, 0.18),
+      0 0 0 12px rgba(37, 211, 102, 0.14);
+  }
+}
+
 @media (max-width: 1100px) {
   .nav-panel {
     gap: 18px;
@@ -1342,6 +1406,13 @@ h1 span {
 
   .about-info-item span {
     font-size: 13px;
+  }
+
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 16px;
+    width: 54px;
+    font-size: 29px;
   }
 
   .portfolio-card {

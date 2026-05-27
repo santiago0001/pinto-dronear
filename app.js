@@ -286,6 +286,13 @@ const renderFooter = () => {
     ) + renderButton(SITE_DATA.ctas.email, "btn-light");
 };
 
+const renderFloatingWhatsapp = () => {
+  const button = $("[data-floating-whatsapp]");
+  button.href = whatsappUrl();
+  button.target = "_blank";
+  button.rel = "noopener";
+};
+
 const bindInteractions = () => {
   $("[data-nav-toggle]").addEventListener("click", () => {
     $("[data-nav-panel]").classList.toggle("is-open");
@@ -324,5 +331,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAbout();
   renderTestimonials();
   renderFooter();
+  renderFloatingWhatsapp();
   bindInteractions();
 });
