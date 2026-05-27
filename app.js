@@ -1,7 +1,10 @@
 const $ = (selector, parent = document) => parent.querySelector(selector);
-const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
+const $$ = (selector, parent = document) => [
+  ...parent.querySelectorAll(selector),
+];
 
-const icon = (name, weight = "") => `<i class="ph ${weight ? `ph-${weight}` : ""} ph-${name}" aria-hidden="true"></i>`;
+const icon = (name, weight = "") =>
+  `<i class="ph ${weight ? `ph-${weight}` : ""} ph-${name}" aria-hidden="true"></i>`;
 
 const whatsappUrl = () => {
   const { number, message } = SITE_DATA.whatsapp;
@@ -29,7 +32,9 @@ const setImageBackground = (element, url, fallbackClass) => {
 
 const renderButton = (button, extraClass = "") => {
   const href = resolveHref(button.href);
-  const target = href.startsWith("http") ? ' target="_blank" rel="noopener"' : "";
+  const target = href.startsWith("http")
+    ? ' target="_blank" rel="noopener"'
+    : "";
   return `<a class="btn ${extraClass}" href="${href}"${target}><span>${button.label}</span>${icon(button.icon)}</a>`;
 };
 
@@ -38,7 +43,10 @@ const renderHeader = () => {
   renderLogo($("[data-logo]"));
   const links = $("[data-nav-links]");
   links.innerHTML = SITE_DATA.nav
-    .map((item, index) => `<li><a class="${index === 0 ? "is-active" : ""}" href="${item.href}">${item.label}</a></li>`)
+    .map(
+      (item, index) =>
+        `<li><a class="${index === 0 ? "is-active" : ""}" href="${item.href}">${item.label}</a></li>`,
+    )
     .join("");
 
   const headerCta = $("[data-header-cta]");
@@ -55,12 +63,13 @@ const renderHero = () => {
 
   const highlighted = SITE_DATA.hero.title.replace(
     SITE_DATA.hero.highlight,
-    `<span>${SITE_DATA.hero.highlight}</span>`
+    `<span>${SITE_DATA.hero.highlight}</span>`,
   );
   $("[data-hero-title]").innerHTML = highlighted;
   $("[data-hero-subtitle]").textContent = SITE_DATA.hero.subtitle;
   $("[data-hero-actions]").innerHTML =
-    renderButton(SITE_DATA.ctas.secondary, "btn-primary") + renderButton(SITE_DATA.ctas.primary, "btn-light");
+    renderButton(SITE_DATA.ctas.secondary, "btn-primary") +
+    renderButton(SITE_DATA.ctas.primary, "btn-light");
 
   const drone = $("[data-hero-drone]");
   if (SITE_DATA.hero.droneImage) {
@@ -77,7 +86,7 @@ const renderBenefits = () => {
         <article class="benefit-item">
           ${icon(item.icon)}
           <div><strong>${item.title}</strong><span>${item.text}</span></div>
-        </article>`
+        </article>`,
     )
     .join("");
 };
@@ -93,15 +102,17 @@ const renderServices = () => {
       (service) => `
         <article class="service-card">
           <div class="service-media ${service.image ? "" : "media-placeholder"}" ${
-        service.image ? `style="background-image:url('${service.image}')"` : ""
-      }>
+            service.image
+              ? `style="background-image:url('${service.image}')"`
+              : ""
+          }>
             <span class="service-icon">${icon(service.icon)}</span>
           </div>
           <div class="service-body">
             <h3>${service.title}</h3>
             <p>${service.description}</p>
           </div>
-        </article>`
+        </article>`,
     )
     .join("");
 };
@@ -121,8 +132,10 @@ const updateCarousel = () => {
   const dots = $("[data-carousel-dots]");
   const dotCount = maxSlide + 1;
   if (dots.children.length !== dotCount) {
-    dots.innerHTML = Array.from({ length: dotCount }, (_, index) =>
-      `<button type="button" aria-label="Ir al grupo de trabajos ${index + 1}"></button>`
+    dots.innerHTML = Array.from(
+      { length: dotCount },
+      (_, index) =>
+        `<button type="button" aria-label="Ir al grupo de trabajos ${index + 1}"></button>`,
     ).join("");
     $$("button", dots).forEach((dot, index) => {
       dot.addEventListener("click", () => {
@@ -155,12 +168,14 @@ const renderPortfolio = () => {
       (item) => `
         <a class="portfolio-card" href="${item.videoUrl}" target="_blank" rel="noopener">
           <div class="portfolio-thumb ${item.thumbnail ? "" : "portfolio-placeholder"}" ${
-        item.thumbnail ? `style="background-image:url('${item.thumbnail}')"` : ""
-      }>
+            item.thumbnail
+              ? `style="background-image:url('${item.thumbnail}')"`
+              : ""
+          }>
             <span class="play-button">${icon("play-circle", "fill")}</span>
             <div class="portfolio-title"><small>${item.category}</small><strong>${item.title}</strong></div>
           </div>
-        </a>`
+        </a>`,
     )
     .join("");
 
@@ -178,7 +193,7 @@ const renderDifferentials = () => {
           ${icon(item.icon)}
           <h3>${item.title}</h3>
           <p>${item.text}</p>
-        </article>`
+        </article>`,
     )
     .join("");
 };
@@ -201,24 +216,32 @@ const renderTestimonials = () => {
             }
             <div><strong>${item.name}</strong><span>${item.role}</span></div>
           </div>
-        </article>`
+        </article>`,
     )
     .join("");
 };
 
 const renderFooter = () => {
   renderLogo($("[data-footer-logo]"));
-  setImageBackground($("[data-footer]"), SITE_DATA.footer.backgroundImage, "footer-placeholder");
+  setImageBackground(
+    $("[data-footer]"),
+    SITE_DATA.footer.backgroundImage,
+    "footer-placeholder",
+  );
   $("[data-footer-text]").textContent = SITE_DATA.footer.text;
   $("[data-footer-links-title]").textContent = SITE_DATA.footer.linksTitle;
-  $("[data-footer-services-title]").textContent = SITE_DATA.footer.servicesTitle;
+  $("[data-footer-services-title]").textContent =
+    SITE_DATA.footer.servicesTitle;
   $("[data-footer-contact-title]").textContent = SITE_DATA.footer.contactTitle;
   $("[data-footer-contact-text]").textContent = SITE_DATA.footer.contactText;
   $("[data-footer-copy]").textContent = SITE_DATA.footer.copyright;
   $("[data-footer-credit]").textContent = SITE_DATA.footer.credit;
 
   $("[data-socials]").innerHTML = SITE_DATA.socials
-    .map((item) => `<a href="${resolveHref(item.href)}" aria-label="${item.label}" target="_blank" rel="noopener">${icon(item.icon)}</a>`)
+    .map(
+      (item) =>
+        `<a href="${resolveHref(item.href)}" aria-label="${item.label}" target="_blank" rel="noopener">${icon(item.icon)}</a>`,
+    )
     .join("");
 
   $("[data-footer-links]").innerHTML = SITE_DATA.nav
@@ -231,8 +254,10 @@ const renderFooter = () => {
     .join("");
 
   $("[data-footer-actions]").innerHTML =
-    renderButton({ ...SITE_DATA.ctas.primary, label: SITE_DATA.footer.whatsappButton }, "btn-primary") +
-    renderButton(SITE_DATA.ctas.email, "btn-light");
+    renderButton(
+      { ...SITE_DATA.ctas.primary, label: SITE_DATA.footer.whatsappButton },
+      "btn-primary",
+    ) + renderButton(SITE_DATA.ctas.email, "btn-light");
 };
 
 const bindInteractions = () => {
