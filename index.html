@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinto Dronear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="constants.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <nav class="navbar container" aria-label="Navegacion principal">
+        <a class="brand" href="#inicio" data-logo></a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          data-nav-toggle
+        >
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="nav-panel" data-nav-panel>
+          <ul class="nav-links" data-nav-links></ul>
+          <a class="btn btn-primary nav-cta" data-header-cta>
+            <span data-header-cta-label></span>
+            <i class="ph ph-whatsapp-logo"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" data-hero>
+        <div class="hero-overlay"></div>
+        <div class="hero-inner container">
+          <div class="hero-copy">
+            <p class="section-kicker" data-hero-kicker></p>
+            <h1 data-hero-title></h1>
+            <p class="hero-subtitle" data-hero-subtitle></p>
+            <div class="hero-actions" data-hero-actions></div>
+          </div>
+          <div class="hero-drone" data-hero-drone></div>
+        </div>
+        <div class="benefit-strip container" data-benefits></div>
+      </section>
+
+      <section class="section section-services" id="servicios">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-kicker" data-services-kicker></p>
+              <h2 data-services-title></h2>
+            </div>
+            <p data-services-text></p>
+          </div>
+          <div class="services-grid" data-services></div>
+        </div>
+      </section>
+
+      <section class="section portfolio-section" id="portfolio">
+        <div class="container">
+          <div class="section-heading portfolio-heading">
+            <div>
+              <p class="section-kicker" data-portfolio-kicker></p>
+              <h2 data-portfolio-title></h2>
+            </div>
+            <a class="text-link" data-portfolio-all>
+              <span></span>
+              <i class="ph ph-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-shell">
+          <button
+            class="carousel-arrow arrow-left"
+            type="button"
+            aria-label="Anterior"
+            data-carousel-prev
+          >
+            <i class="ph ph-caret-left"></i>
+          </button>
+          <div class="portfolio-track-wrap container">
+            <div class="portfolio-track" data-portfolio-track></div>
+          </div>
+          <button
+            class="carousel-arrow arrow-right"
+            type="button"
+            aria-label="Siguiente"
+            data-carousel-next
+          >
+            <i class="ph ph-caret-right"></i>
+          </button>
+        </div>
+        <div class="carousel-dots" data-carousel-dots></div>
+      </section>
+
+      <section class="section differentials-section" id="sobre-mi">
+        <div class="container differentials-layout">
+          <div class="section-heading">
+            <p class="section-kicker" data-differentials-kicker></p>
+            <h2 data-differentials-title></h2>
+          </div>
+          <div class="differentials-grid" data-differentials></div>
+        </div>
+      </section>
+
+      <section class="section testimonials-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker" data-testimonials-kicker></p>
+            <h2 data-testimonials-title></h2>
+          </div>
+          <div class="testimonials-grid" data-testimonials></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contacto" data-footer>
+      <div class="footer-overlay"></div>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#inicio" data-footer-logo></a>
+          <p data-footer-text></p>
+          <div class="social-links" data-socials></div>
+        </div>
+        <div>
+          <h3 data-footer-links-title></h3>
+          <ul class="footer-links" data-footer-links></ul>
+        </div>
+        <div>
+          <h3 data-footer-services-title></h3>
+          <ul class="footer-links" data-footer-services></ul>
+        </div>
+        <div class="footer-contact">
+          <h3 data-footer-contact-title></h3>
+          <p data-footer-contact-text></p>
+          <div class="footer-actions" data-footer-actions></div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span data-footer-copy></span>
+        <span data-footer-credit></span>
+      </div>
+    </footer>
+  </body>
+</html>
