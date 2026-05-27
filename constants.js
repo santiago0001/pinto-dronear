@@ -41,8 +41,8 @@ const SITE_DATA = {
     highlight: "OTRO PUNTO DE VISTA",
     subtitle:
       "Filmaciones aereas en 4K para eventos, turismo, comercios y experiencias unicas. Contenido profesional que genera impacto.",
-    backgroundImage: "",
-    droneImage: "./portada.png",
+    backgroundImage: "./fondo_portada.webp",
+    droneImage: "./drone_portada.png",
     droneAlt: "Drone profesional",
     dronePlaceholder: "Imagen de drone",
   },

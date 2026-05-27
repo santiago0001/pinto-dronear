@@ -615,19 +615,24 @@ h1 span {
 
 .differentials-section {
   padding-top: 36px;
+  overflow-x: clip;
 }
 
 .differentials-layout {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
   gap: 42px;
   align-items: start;
 }
 
 .differentials-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 26px;
+}
+
+.differential-item {
+  min-width: 0;
 }
 
 .differential-item i {
@@ -639,6 +644,11 @@ h1 span {
   margin: 14px 0 7px;
   font-size: 15px;
   line-height: 1.18;
+  overflow-wrap: anywhere;
+}
+
+.differential-item p {
+  overflow-wrap: anywhere;
 }
 
 .testimonials-section {
@@ -823,7 +833,7 @@ h1 span {
   }
 
   .differentials-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -887,6 +897,32 @@ h1 span {
     padding: 22px;
   }
 
+  .differentials-section {
+    padding-top: 28px;
+  }
+
+  .differentials-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .differentials-layout .section-heading {
+    margin-bottom: 0;
+  }
+
+  .differentials-layout .section-heading h2 {
+    max-width: 100%;
+  }
+
+  .differentials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .differential-item {
+    width: 100%;
+  }
+
   .split-heading p:last-child {
     padding-left: 0;
     border-left: 0;
@@ -936,6 +972,41 @@ h1 span {
   .differentials-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .differentials-section {
+    padding-top: 18px;
+  }
+
+  .differentials-layout {
+    gap: 18px;
+  }
+
+  .differentials-grid {
+    gap: 14px;
+  }
+
+  .differential-item {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    column-gap: 14px;
+    align-items: start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .differential-item i {
+    font-size: 34px;
+  }
+
+  .differential-item h3 {
+    margin: 0 0 5px;
+    font-size: 16px;
+  }
+
+  .differential-item p {
+    grid-column: 2;
+    font-size: 14px;
   }
 
   .portfolio-card {
