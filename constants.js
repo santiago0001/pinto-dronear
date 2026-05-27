@@ -125,34 +125,28 @@ const SITE_DATA = {
   ],
   portfolio: [
     {
-      title: "El problema de Bariloche",
+      title: "Playa libre",
+      category: "Lifestyle",
+      thumbnail: "./imagenes/trabajos/playa.webp",
+      videoUrl: "https://www.instagram.com/reel/DYyHh3ttlup/",
+    },
+    {
+      title: "Bariloche desde el agua",
       category: "Turismo",
-      thumbnail: "",
-      videoUrl: "https://www.youtube.com/",
+      thumbnail: "./imagenes/trabajos/bariloche.webp",
+      videoUrl: "https://www.instagram.com/reel/DY20AqouGUd/",
     },
     {
       title: "Punta Rasa en cuatriciclo",
       category: "Aventura",
-      thumbnail: "",
-      videoUrl: "https://www.youtube.com/",
+      thumbnail: "./imagenes/trabajos/cuatri.webp",
+      videoUrl: "https://www.instagram.com/reel/DYzl7iMte_U/",
     },
     {
       title: "Capilla del Senor desde el aire",
       category: "Ciudad",
-      thumbnail: "",
-      videoUrl: "https://www.youtube.com/",
-    },
-    {
-      title: "Playa libre",
-      category: "Lifestyle",
-      thumbnail: "",
-      videoUrl: "https://www.youtube.com/",
-    },
-    {
-      title: "Hotel entre montanas",
-      category: "Hoteleria",
-      thumbnail: "",
-      videoUrl: "https://www.youtube.com/",
+      thumbnail: "./imagenes/trabajos/capilla.webp",
+      videoUrl: "https://www.instagram.com/reel/DYxxeqlBt8x/",
     },
   ],
   differentials: [

@@ -516,7 +516,7 @@ h1 span {
 .portfolio-thumb {
   position: relative;
   min-height: 250px;
-  aspect-ratio: 1.04 / 1;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: 8px;
   background-position: center;
