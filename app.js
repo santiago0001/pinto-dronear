@@ -182,17 +182,43 @@ const renderPortfolio = () => {
   updateCarousel();
 };
 
-const renderDifferentials = () => {
-  const section = SITE_DATA.sections.differentials;
-  $("[data-differentials-kicker]").textContent = section.kicker;
-  $("[data-differentials-title]").textContent = section.title;
-  $("[data-differentials]").innerHTML = SITE_DATA.differentials
+const renderAbout = () => {
+  const about = SITE_DATA.sections.about;
+  $("[data-about-kicker]").textContent = about.kicker;
+
+  const title = about.title.replace(
+    about.highlight,
+    `<span>${about.highlight}</span>`,
+  );
+  $("[data-about-title]").innerHTML = title.replace(/\n/g, "<br />");
+
+  $("[data-about-text]").innerHTML = about.paragraphs
+    .map((paragraph) => `<p>${paragraph}</p>`)
+    .join("");
+
+  $("[data-about-actions]").innerHTML = renderButton(
+    about.cta,
+    "btn-primary",
+  );
+
+  const image = $("[data-about-image]");
+  if (ABOUT_IMAGE_URL) {
+    image.innerHTML = `<img src="${ABOUT_IMAGE_URL}" alt="${about.imageAlt}" />`;
+    image.classList.remove("about-image-placeholder");
+  } else {
+    image.innerHTML = `<div>${icon("drone")}<span>${about.imagePlaceholder}</span></div>`;
+    image.classList.add("about-image-placeholder");
+  }
+
+  $("[data-about-info]").innerHTML = about.infoItems
     .map(
       (item) => `
-        <article class="differential-item">
+        <article class="about-info-item">
           ${icon(item.icon)}
-          <h3>${item.title}</h3>
-          <p>${item.text}</p>
+          <div>
+            ${item.title ? `<strong>${item.title}</strong>` : ""}
+            <span>${item.text}</span>
+          </div>
         </article>`,
     )
     .join("");
@@ -295,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderBenefits();
   renderServices();
   renderPortfolio();
-  renderDifferentials();
+  renderAbout();
   renderTestimonials();
   renderFooter();
   bindInteractions();

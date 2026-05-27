@@ -1,3 +1,5 @@
+const ABOUT_IMAGE_URL = "./imagenes/sobre_mi.png";
+
 const SITE_DATA = {
   siteTitle: "Pinto Dronear",
   logo: {
@@ -14,7 +16,7 @@ const SITE_DATA = {
     { label: "Contacto", href: "#contacto" },
   ],
   whatsapp: {
-    number: "5491123456789",
+    number: "5491159743031",
     message:
       "Hola, quiero solicitar un presupuesto para una filmacion con drone.",
   },
@@ -67,6 +69,43 @@ const SITE_DATA = {
     differentials: {
       kicker: "Por que elegirnos?",
       title: "Calidad, experiencia y compromiso",
+    },
+    about: {
+      kicker: "SOBRE MÍ",
+      title: "DE LA PLAYA NACIÓ\nMI MIRADA DESDE EL AIRE",
+      highlight: "DESDE EL AIRE",
+      paragraphs: [
+        "Soy Santiago, creador de Pinto Dronear. Hace más de 5 años, durante la pandemia, me fui a vivir a la playa y ahí descubrí mi pasión por los drones. Desde ese momento entendí que quería mostrar los lugares desde una perspectiva diferente.",
+        "Me apasiona capturar naturaleza, paisajes y hoteles con una mirada cinematográfica, buscando que cada toma transmita la emoción y la inmensidad del momento.",
+        "En Pinto Dronear no se trata solo de volar un drone, sino de crear imágenes profesionales que hagan que las personas vean el mundo desde otro ángulo.",
+      ],
+      cta: {
+        label: "VER TRABAJOS",
+        href: "#portfolio",
+        icon: "play-circle",
+      },
+      imageAlt: "Santiago usando el control del drone",
+      imagePlaceholder: "Foto de Santiago usando el control del drone",
+      infoItems: [
+        {
+          icon: "quotes",
+          text: "Cada vuelo es una nueva forma de contar una historia.",
+        },
+        {
+          icon: "calendar",
+          title: "+5",
+          text: "años de experiencia",
+        },
+
+        {
+          icon: "camera",
+          text: "Edición premium en 4K",
+        },
+        {
+          icon: "map-pin",
+          text: "Entrega rápida y confiable",
+        },
+      ],
     },
     testimonials: {
       kicker: "Testimonios",
@@ -203,13 +242,17 @@ const SITE_DATA = {
     {
       label: "Instagram",
       icon: "instagram-logo",
-      href: "https://www.instagram.com/",
+      href: "https://www.instagram.com/pintodronear",
     },
-    { label: "TikTok", icon: "tiktok-logo", href: "https://www.tiktok.com/" },
+    {
+      label: "TikTok",
+      icon: "tiktok-logo",
+      href: "https://www.tiktok.com/@pinto.dronear",
+    },
     {
       label: "YouTube",
       icon: "youtube-logo",
-      href: "https://www.youtube.com/",
+      href: "https://www.youtube.com/@PintoDronear",
     },
     { label: "WhatsApp", icon: "whatsapp-logo", href: "whatsapp" },
   ],
