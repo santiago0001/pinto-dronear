@@ -33,7 +33,7 @@ const SITE_DATA = {
     },
     email: {
       label: "Solicitar presupuesto",
-      href: "mailto:hola@pintodronear.com",
+      href: "mailto:santiago@pintodronear.com.ar",
       icon: "envelope-simple",
     },
   },
