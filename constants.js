@@ -187,6 +187,12 @@ const SITE_DATA = {
       thumbnail: "./imagenes/trabajos/capilla.webp",
       videoUrl: "https://www.instagram.com/reel/DYxxeqlBt8x/",
     },
+    {
+      title: "Carpinteria - San Luis",
+      category: "Turismo",
+      thumbnail: "./imagenes/trabajos/carpinteria.webp",
+      videoUrl: "https://www.instagram.com/p/DY593ScNA7R/",
+    },
   ],
   differentials: [
     {
